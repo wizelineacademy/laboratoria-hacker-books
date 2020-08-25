@@ -1,3 +1,4 @@
+// eslint-disable
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser', // the TypeScript parser we installed earlier

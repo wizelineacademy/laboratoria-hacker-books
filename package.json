@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook",
-    "lint": "eslint"
+    "lint": "eslint ./components** ./pages/** -c .eslintrc.js --ext ts,tsx"
   },
   "dependencies": {
     "next": "9.5.2",
