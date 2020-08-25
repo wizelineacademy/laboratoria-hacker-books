@@ -14,5 +14,11 @@ module.exports = {
   ],
   rules: {
     'react/prop-types': 'off', // We turn off prop-types rule, as we will use TypeScript's types instead.
+    "react/react-in-jsx-scope": "off",
+    // allow jsx syntax in js files (for next.js project)
+   "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tx", ".tsx"] }],
   },
+  "env": {
+    "jest": true
+  }
 };
