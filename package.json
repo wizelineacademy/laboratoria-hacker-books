@@ -43,7 +43,9 @@
     "jest": "^26.4.2",
     "jest-dom": "^4.0.0",
     "lint-staged": "^10.2.11",
+    "postcss-preset-env": "^6.7.0",
     "react-docgen-typescript-loader": "^3.7.2",
+    "tailwindcss": "^1.7.5",
     "typescript": "^3.9.7"
   },
   "husky": {
