@@ -2,6 +2,18 @@
 # Hacker Books
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Content
+
+- [Documentation](#documentation)
+- [Getting Started](#getting-started)
+- [Learn More](#learn-more)
+- [Deploy](#deploy-on-vercel)
+- [Recommended Tools](#recommended-tools)
+
+## Documentation
+
+To contribute to this repository, see the [Contributing Guidelines](.github/CONTRIBUTING.md).
+
 ## Getting Started
 
 First, run the development server:
