@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { StatusCodes } from 'http-status-codes';
 
-import * as TestController from '../../controllers/test';
+import * as TestController from '../../controllers/items';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { method } = req;
