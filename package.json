@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook",
-    "lint": "eslint ./components/** ./pages/** ./containers/** -c .eslintrc.js --ext ts,tsx",
+    "lint": "eslint ./components/** ./containers/** ./controllers/** ./pages/** ./utils/**  -c .eslintrc.js --ext ts,tsx",
     "test": "jest",
     "e2e": "cypress open"
   },
