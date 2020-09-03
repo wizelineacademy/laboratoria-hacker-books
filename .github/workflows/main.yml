@@ -1,5 +1,7 @@
-name: End-to-end tests
-on: [push]
+name: Continuous Integration
+on:
+  pull_request:
+    types: [assigned, opened, synchronize, reopened, edited]
 jobs:
   build:
     runs-on: ubuntu-latest
