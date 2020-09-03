@@ -163,6 +163,84 @@ Let's review each of the sections.
 - **Screenshots (if appropriate)** Screenshots of the feature if available.
 - **Questions** If available, to another developer or reviewer.
 
+## Reviewing Pull Requests
+
+You can watch a nice presentation about code reviews best practices here: [Code reviews like a human, by Michael Lynch](https://www.youtube.com/watch?v=NuNqWtOmqnA)
+
+### 1. Start reviewing immediately
+
+- Treat code reviews as a high priority
+- While waiting for a review a developer might be blocked
+- When you start reviews immediately, you create a virtuous cycle
+  - Review turnaround becomes a function of code size
+  - Smaller PRs are reviewed faster
+  - Smaller PRs are easier and more pleasant
+- Slow reviews incentivize larger PRs
+
+#### Techniques
+
+- First response should be as [fast as possible](https://google.github.io/eng-practices/review/reviewer/speed.html#responses), even if the whole review takes more time
+- The whole team should do code reviews, even if final approval is restricted to one person. Having more reviews helps accelerate the process and disseminate knowledge
+- Use [feature flags](https://www.martinfowler.com/articles/feature-toggles.html)
+- [Split large changesets](https://google.github.io/eng-practices/review/developer/small-cls.html), even better if you can suggest good splitting strategies
+- If the team is struggling to review quickly maybe the pace needs to be adjusted
+- [LGTM with comments](https://google.github.io/eng-practices/review/reviewer/speed.html#lgtm-with-comments)
+
+
+### 2. Start high level and work your way down
+
+- Understand the parent ticket or issue first
+- How would you code the solution? Does it needs code?
+- Limit the first round of comments to higher level arguments like:
+    - product or feature related questions (are we providing too much features? too little?)
+    - redesigning the class interface or API being created (method names, number of methods needed, what does each method is supposed to do)
+- Your low-level notes might become moot once the author integrates your high-level notes
+
+### 3. Frame correctly your requests
+
+- Never say “you”. Keep ego out. Try using “we”. Remember this is a team effort.
+- Ask questions, don’t give orders
+- Tie notes to principles, not opinions
+    - Bad: We should split this class into two
+    - Good: Right now, this class is responsible for both downloading the file and parsing it. We should split it up into a downloader class and parsing class per the single responsibility principle.
+
+### 4. Be generous with code examples
+
+- Developer might be under pressure to get code checked in
+- It clarifies any request
+- Examples demonstrate that you genuinely want to help
+
+##### Example 1
+
+    urls = []
+    for path in paths:
+      url = 'https://'
+      url += domain
+      url += path
+      urls.append(url)
+
+Option 1: You can simplify that with a list comprehension
+
+Option 2: Consider simplifying with a list comprehension like this:
+
+    urls = ['https://' + domain + path for path in paths]
+
+##### Example 2
+
+- Option 1: Maybe we should add a few more unit tests
+- Option 2: Maybe we should add a few tests for case x. You can find a similar test here: [insert example or link]. This will need allow mocking dependency y like done here: [insert example or link].
+
+### 5. Offer sincere praise, learn something new
+
+- Code reviews don’t have to be about mistakes
+- Can you learn something new?
+- Keep an eye out for things that delight you:
+  - “I wasn’t aware of this API. That’s really useful!”
+  - “This is an elegant solution. I never would have thought of that.”
+  - “Breaking up this function was a great idea. It’s so much simpler now.”
+- Praising reinforces learning. Looking for things to praise also helps you find new things to learn.
+- Recognize when they show improvement
+
 ## Merging Pull Requests
 
 To merge a pull request, it should have at least one positive reviews and no pending change or fix requests.
