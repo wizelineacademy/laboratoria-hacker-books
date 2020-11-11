@@ -22,6 +22,18 @@ export default function Home({ props }) {
     { title: 'Course 8', alt: 'img8', src: '8' },
   ]
 
+  const arrowNext = () => {
+    setViewNextVideo((viewNextVideo + 1) % cards.length);
+  }
+
+  const arrowPrev = () => {
+    if (viewNextVideo == 0) {
+      setViewNextVideo(cards.length - 1)
+    } else {
+      setViewNextVideo(viewNextVideo - 1)
+    }
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -40,8 +52,8 @@ export default function Home({ props }) {
           />
         </div>
         <div className="flex flex-row">
-          <ArrowPrevSVG />
-          <ArrowNextSVG />
+          <ArrowPrevSVG {...props} onClick={arrowPrev} />
+          <ArrowNextSVG {...props} onClick={arrowNext} />
         </div>
 
         <div className={styles.grid}>
