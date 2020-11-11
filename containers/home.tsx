@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head'
+
+import ListCardVideo from '../components/listCardVideo/ListCardVideo'
+import ArrowPrevSVG from '../components/svg/arrowPrevSVG'
+import ArrowNextSVG from '../components/svg/arrowNextSVG'
+
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({ props }) {
+
+  const [viewNextVideo, setViewNextVideo] = useState(0)
+
+  const cards = [
+    { title: 'Course 1', alt: 'img1', src: '1' },
+    { title: 'Course 2', alt: 'img2', src: '2' },
+    { title: 'Course 3', alt: 'img3', src: '3' },
+    { title: 'Course 4', alt: 'img4', src: '4' },
+    { title: 'Course 5', alt: 'img5', src: '5' },
+    { title: 'Course 6', alt: 'img6', src: '6' },
+    { title: 'Course 7', alt: 'img7', src: '7' },
+    { title: 'Course 8', alt: 'img8', src: '8' },
+  ]
+
   return (
     <div className={styles.container}>
       <Head>
@@ -11,14 +30,19 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        <h1 className={`${styles.title} pb-6`}>
+          Welcome to Bookmark
         </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <div className="container  mx-auto overflow-hidden w-3/5" style={{ background: "orange" }}>
+          <ListCardVideo
+            cards={cards}
+          />
+        </div>
+        <div className="flex flex-row">
+          <ArrowPrevSVG />
+          <ArrowNextSVG />
+        </div>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
