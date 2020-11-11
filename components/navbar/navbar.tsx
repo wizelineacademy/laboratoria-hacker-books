@@ -1,8 +1,8 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 
 // Components
-import AvatarUser from '../svg/avatarUser'
+import AvatarUser from '../svg/avatarUser';
 
 const Navbar = () => {
     return (
@@ -22,8 +22,8 @@ const Navbar = () => {
                     <input type="text" className="px-4 py-2" style={{ width: "22rem" }} placeholder="What do you want to watch today" />
                 </div>
                 <div className="flex justify-center items-center">
-                    <a href="https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md" className="inline-block items-center text-sm px-4 py-2 leading-none border rounded text-white border-white bg-purple-500 hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0">New video</a>
-                    <a href="https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md" className="block mt-4 mx-3 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                    <a href="#top" className="inline-block items-center text-sm px-4 py-2 leading-none border rounded text-white border-white bg-purple-500 hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0">New video</a>
+                    <a href="#top" className="block mt-4 mx-3 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                         <AvatarUser />
                     </a>
                 </div>
