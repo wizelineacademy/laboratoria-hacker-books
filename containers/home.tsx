@@ -6,7 +6,6 @@ import Navbar from '../components/navbar/navbar';
 
 // Styles
 import styles from '../styles/Home.module.css';
-import searchBar from '../components/searchBar/searchBar';
 
 export default function Home({searchBar}) {
   return (
