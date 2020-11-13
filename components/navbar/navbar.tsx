@@ -4,8 +4,13 @@ import Link from 'next/link';
 // Components
 import AvatarUser from '../svg/avatarUser';
 import SearchBar from '../searchBar/searchBar';
+import LogoBook from '../svg/logoBook';
 
-const Navbar = () => {
+interface iNavbar {
+  color: string;
+}
+
+const Navbar: React.FC<iNavbar> = ({ color }) => {
   return (
     <nav
       className='w-full flex items-center justify-between flex-wrap bg-blue-900 p-6'
@@ -13,7 +18,7 @@ const Navbar = () => {
     >
       <Link href='/' passHref>
         <div className='flex items-center flex-shrink-0 text-white mr-6'>
-          <h2>Bookmark</h2>
+          <LogoBook color={'white'} /> <h1 className='pl-2' color={color}>Bookmark</h1>
         </div>
       </Link>
       <div className='block lg:hidden'>

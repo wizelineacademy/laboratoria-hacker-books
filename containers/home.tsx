@@ -7,7 +7,7 @@ import Navbar from '../components/navbar/navbar';
 // Styles
 import styles from '../styles/Home.module.css';
 
-export default function Home({searchBar}) {
+export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +15,7 @@ export default function Home({searchBar}) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Navbar />
+      <Navbar color={'white'}/>
 
       <main className={styles.main}>
         <h1 className={styles.title}>Welcome to Next.js!</h1>
