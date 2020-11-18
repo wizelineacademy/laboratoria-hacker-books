@@ -1,8 +1,11 @@
 import React from 'react';
+interface iClick {
+  onPrev: () => void;
+}
 
-const ArrowPrevSVG = ({ size = '34px' }) => {
+const ArrowPrevSVG: React.FC<iClick> = ({ onPrev }) => {
   return (
-    <div>
+    <button onClick={onPrev}>
       <svg
         width='32'
         height='32'
@@ -16,7 +19,7 @@ const ArrowPrevSVG = ({ size = '34px' }) => {
           fill='#4E4E4E'
         />
       </svg>
-    </div>
+    </button>
   );
 };
 

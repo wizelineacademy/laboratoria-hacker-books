@@ -1,8 +1,11 @@
 import React from 'react';
+interface iClickNext {
+  onNext: () => void;
+}
 
-const ArrowNextSVG = ({ size = '34px' }) => {
+const ArrowNextSVG: React.FC<iClickNext> = ({ onNext }) => {
   return (
-    <div>
+    <button onClick={onNext}>
       <svg
         width='32'
         height='32'
@@ -16,7 +19,7 @@ const ArrowNextSVG = ({ size = '34px' }) => {
           fill='#4E4E4E'
         />
       </svg>
-    </div>
+    </button>
   );
 };
 
