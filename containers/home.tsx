@@ -55,7 +55,7 @@ const Home: React.FC<iVideo> = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={`${styles.title} pb-1`}>Welcome to Bookmark</h1>
+        <h1 className={`${styles.title} pb-1`}>Welcome to Next.js!</h1>
         <h3 className='p-3'>Category with button</h3>
         <div className='container mx-auto overflow-hidden w-1/2 bg-orange-100'>
           <ListCardVideo cards={showVideos} />
