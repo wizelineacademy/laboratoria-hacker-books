@@ -1,26 +1,23 @@
-import React from 'react'
+import React from 'react';
 
 // Components
-import CardVideo from '../cardVideo/cardVideo'
+import CardVideo from '../cardVideo/cardVideo';
 
 // Styeles
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Home.module.css';
 
 const ListCardVideo = ({ cards }) => {
-
   return (
     <div className={`${styles.containerCard} bg-gray-200`}>
-      <div className="z-10">
-      </div>
-      {cards.map((card) => {
+      {cards.map((card: any) => {
         return (
-          <div style={{ background: "white" }} key={card.alt} className="mx-2">
+          <div key={card.alt} className={`${styles.width100} mx-2 bg-white`}>
             <CardVideo card={card} />
           </div>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default ListCardVideo
+export default ListCardVideo;
