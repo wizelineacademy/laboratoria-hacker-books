@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Components
-import ScoreStar from '../svg/scoreStar';
+import ScoreStarSVG from '../svg/scoreStarSVG';
 import IconPlaySVG from '../svg/iconPlaySVG';
 
 const CardVideo = ({ card }) => {
@@ -15,13 +15,13 @@ const CardVideo = ({ card }) => {
       </div>
       <div className='mx-6 mt-2 mb-2 rounded-full bg-gray-200'>
         <span className='inline-block text-sm font-semibold text-gray-700 mr-2'>
-          <ScoreStar />
+          <ScoreStarSVG />
         </span>
         <span className='inline-block text-sm font-semibold text-gray-700 mr-2'>
-          <ScoreStar />
+          <ScoreStarSVG />
         </span>
         <span className='inline-block text-sm font-semibold text-gray-700 mr-2'>
-          <ScoreStar />
+          <ScoreStarSVG />
         </span>
       </div>
     </div>

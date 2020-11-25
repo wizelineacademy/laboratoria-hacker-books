@@ -2,19 +2,20 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 
 // Components
-import ListCardVideo from '../components/listCardVideo/listCardVideo';
+import VideoCardList from '../components/videoCardList/videoCardList';
 import ArrowPrevSVG from '../components/svg/arrowPrevSVG';
 import ArrowNextSVG from '../components/svg/arrowNextSVG';
 
 // Style
 import styles from '../styles/Home.module.css';
+
 interface iVideo {
   cards?: [{ title: string; alt: any; src: any }];
 }
 
 const Home: React.FC<iVideo> = () => {
-  const [viewNextVideo, setViewNextVideo] = useState(0);
-  const [showVideos, setShowVideos] = useState([]);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [videosToShow, setVideosToShow] = useState([]);
 
   const cards = [
     { title: 'Course 1', alt: 'img1', src: '1' },
@@ -28,22 +29,22 @@ const Home: React.FC<iVideo> = () => {
   useEffect(() => {
     const videosToShow = [];
 
-    for (let i = viewNextVideo; i <= viewNextVideo + 3; i++) {
+    for (let i = currentVideoIndex; i <= currentVideoIndex + 3; i++) {
       videosToShow.push(cards[i]);
     }
 
-    setShowVideos(videosToShow);
-  }, [viewNextVideo]);
+    setVideosToShow(videosToShow);
+  }, [currentVideoIndex]);
 
   const arrowNext = () => {
-    if (viewNextVideo < 2) {
-      setViewNextVideo(viewNextVideo + 1);
+    if (currentVideoIndex < 2) {
+      setCurrentVideoIndex(currentVideoIndex + 1);
     }
   };
 
   const arrowPrev = () => {
-    if (viewNextVideo > 0) {
-      setViewNextVideo(viewNextVideo - 1);
+    if (currentVideoIndex > 0) {
+      setCurrentVideoIndex(currentVideoIndex - 1);
     }
   };
 
@@ -58,7 +59,7 @@ const Home: React.FC<iVideo> = () => {
         <h1 className={`${styles.title} pb-1`}>Welcome to Next.js!</h1>
         <h3 className='p-3'>Category with button</h3>
         <div className='container mx-auto overflow-hidden w-1/2 bg-orange-100'>
-          <ListCardVideo cards={showVideos} />
+          <VideoCardList cards={videosToShow} />
         </div>
         <div className='flex flex-row'>
           <ArrowPrevSVG onPrev={arrowPrev} />
@@ -67,7 +68,7 @@ const Home: React.FC<iVideo> = () => {
 
         <h3 className='p-3'>Category with scroll</h3>
         <div className={`${styles.overflowList} container mx-auto overflow-hidden w-1/2 bg-gray-100`}>
-          <ListCardVideo cards={cards} />
+          <VideoCardList cards={cards} />
         </div>
       </main>
 
@@ -86,7 +87,3 @@ const Home: React.FC<iVideo> = () => {
 };
 
 export default Home;
-
-//onClick?: () => void; //reload: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
-//const arrowNext = (): void => {let next = setViewNextVideo((viewNextVideo + 1) % cards.length);};
-//const arrowPrev = (): void => {if (viewNextVideo == 0) {setViewNextVideo(cards.length - 1);} else {setViewNextVideo(viewNextVideo - 1);}};

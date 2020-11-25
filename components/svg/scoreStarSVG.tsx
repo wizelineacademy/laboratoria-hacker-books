@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ScoreStar = () => {
+const ScoreStarSVG = () => {
   return (
     <div>
       <svg
@@ -19,4 +19,4 @@ const ScoreStar = () => {
   );
 };
 
-export default ScoreStar;
+export default ScoreStarSVG;

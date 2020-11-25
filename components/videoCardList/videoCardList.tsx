@@ -6,7 +6,11 @@ import CardVideo from '../cardVideo/cardVideo';
 // Styles
 import styles from '../../styles/Home.module.css';
 
-const ListCardVideo = ({ cards }) => {
+interface iVideoList {
+  cards?: any;
+}
+
+const VideoCardList: React.FC<iVideoList> = ({ cards }) => {
   return (
     <div className={`${styles.containerCard} bg-gray-200`}>
       {cards.map((card: any) => {
@@ -20,4 +24,4 @@ const ListCardVideo = ({ cards }) => {
   );
 };
 
-export default ListCardVideo;
+export default VideoCardList;
