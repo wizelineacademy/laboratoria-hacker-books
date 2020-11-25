@@ -3,7 +3,7 @@ import React from 'react';
 // Components
 import CardVideo from '../cardVideo/cardVideo';
 
-// Styeles
+// Styles
 import styles from '../../styles/Home.module.css';
 
 const ListCardVideo = ({ cards }) => {

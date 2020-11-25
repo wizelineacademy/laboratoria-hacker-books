@@ -29,5 +29,3 @@ const CardVideo = ({ card }) => {
 };
 
 export default CardVideo;
-
-//<img className="w-full" className={styles.sizeImg} src="/img/js-1.png" alt="Video course" />
