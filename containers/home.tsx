@@ -9,8 +9,13 @@ import ArrowNextSVG from '../components/svg/arrowNextSVG';
 // Style
 import styles from '../styles/Home.module.css';
 
+interface iCard {
+  title: string,
+  alt?: string,
+  src?: string
+}
 interface iVideo {
-  cards?: [{ title: string; alt: any; src: any }];
+  cards?: Array<iCard>;
 }
 
 const Home: React.FC<iVideo> = () => {
@@ -28,21 +33,22 @@ const Home: React.FC<iVideo> = () => {
 
   useEffect(() => {
     const videosToShow = [];
+    const MAX_VIDEOS_TO_SHOW = 3
 
-    for (let i = currentVideoIndex; i <= currentVideoIndex + 3; i++) {
+    for (let i = currentVideoIndex; i <= currentVideoIndex + MAX_VIDEOS_TO_SHOW; i++) {
       videosToShow.push(cards[i]);
     }
 
     setVideosToShow(videosToShow);
   }, [currentVideoIndex]);
 
-  const arrowNext = () => {
+  const setNextVideoIndex = () => {
     if (currentVideoIndex < 2) {
       setCurrentVideoIndex(currentVideoIndex + 1);
     }
   };
 
-  const arrowPrev = () => {
+  const setPrevVideoIndex = () => {
     if (currentVideoIndex > 0) {
       setCurrentVideoIndex(currentVideoIndex - 1);
     }
@@ -62,8 +68,8 @@ const Home: React.FC<iVideo> = () => {
           <VideoCardList cards={videosToShow} />
         </div>
         <div className='flex flex-row'>
-          <ArrowPrevSVG onPrev={arrowPrev} />
-          <ArrowNextSVG onNext={arrowNext} />
+          <ArrowPrevSVG onPrev={setPrevVideoIndex} />
+          <ArrowNextSVG onNext={setNextVideoIndex} />
         </div>
 
         <h3 className='p-3'>Category with scroll</h3>
