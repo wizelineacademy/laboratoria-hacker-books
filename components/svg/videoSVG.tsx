@@ -1,6 +1,10 @@
 import React from 'react';
 
-const VideoSVG = ({size = '34px'}) => {
+interface iVideoSVG {
+  size: string;
+}
+
+const VideoSVG: React.FC<iVideoSVG> = ({size = '34px'}) => {
   return (
     <div style={{display: 'flex', alignItems: "center"}}>
       <svg

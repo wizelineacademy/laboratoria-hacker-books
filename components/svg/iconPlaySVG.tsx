@@ -1,6 +1,10 @@
 import React from 'react';
 
-const BtnPlaySVG = ({size = '34px'}) => {
+interface iPlaySVG {
+  size: string;
+}
+
+const BtnPlaySVG: React.FC<iPlaySVG> = ({size = '34px'}) => {
   return (
     <div>
       <svg

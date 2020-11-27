@@ -1,6 +1,10 @@
 import React from 'react';
 
-const ScoreStarSVG = () => {
+interface iScoreSVG {
+  play: string;
+}
+
+const ScoreStarSVG: React.FC<iScoreSVG> = () => {
   return (
     <div>
       <svg
