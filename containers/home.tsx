@@ -16,13 +16,15 @@ interface iCard {
 }
 interface iVideo {
   cards?: Array<iCard>;
+  setPrevVideoIndex?: () => void;
+  setNextVideoIndex?: () => void;
 }
 
 const MAX_VIDEOS_TO_SHOW = 3
 
 const Home: React.FC<iVideo> = () => {
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const [videosToShow, setVideosToShow] = useState([]);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0);
+  const [videosToShow, setVideosToShow] = useState<Array<iCard>>([]);
 
   const cards = [
     { title: 'Course 1', alt: 'img1', src: '1' },
@@ -68,17 +70,8 @@ const Home: React.FC<iVideo> = () => {
         <h1 className={`${styles.title} pb-1`}>Welcome to Next.js!</h1>
         <h3 className='p-3'>Category with button</h3>
         <div className='container mx-auto bg-orange-100'>
-          <VideoCardList cards={videosToShow} />
-        </div>
-        <div className='flex flex-row'>
-          <ArrowPrevSVG onPrev={setPrevVideoIndex} />
-          <ArrowNextSVG onNext={setNextVideoIndex} />
-        </div>
-
-        <h3 className='p-3'>Category with scroll</h3>
-        <div className={`${styles.overflowList} container mx-auto overflow-hidden w-1/2 bg-gray-100`}>
-          <VideoCardList cards={cards} />
-        </div>
+          <VideoCardList cards={videosToShow} setPrevVideoIndex={setPrevVideoIndex} setNextVideoIndex={setNextVideoIndex} />
+        </div> 
       </main>
 
       <footer className={styles.footer}>

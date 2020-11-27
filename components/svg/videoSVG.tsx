@@ -6,7 +6,7 @@ interface iVideoSVG {
 
 const VideoSVG: React.FC<iVideoSVG> = ({size = '34px'}) => {
   return (
-    <div style={{display: 'flex', alignItems: "center"}}>
+    <div className="flex justify-center p-12">
       <svg
         version='1.0'
         xmlns='http://www.w3.org/2000/svg'

@@ -28,7 +28,7 @@ type Props = iCard | iPlaySVG | iScoreSVG;
 
   return (
     <div className='max-w-sm rounded overflow-hidden shadow-lg w-3-5'>
-      <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
+      <div  className="flex justify-center p-12">
         <IconPlaySVG size={size} />
       </div>
       <div className='px-6 py-4'>
