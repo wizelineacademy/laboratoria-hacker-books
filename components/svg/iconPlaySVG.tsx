@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface iPlaySVG {
-  size: string;
+  size?: string;
 }
 
 const BtnPlaySVG: React.FC<iPlaySVG> = ({size = '34px'}) => {

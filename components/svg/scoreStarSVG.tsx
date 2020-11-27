@@ -1,15 +1,15 @@
 import React from 'react';
 
 interface iScoreSVG {
-  play: string;
+  size: string;
 }
 
-const ScoreStarSVG: React.FC<iScoreSVG> = () => {
+const ScoreStarSVG: React.FC<iScoreSVG> = ({size = '24px'}) => {
   return (
     <div>
       <svg
-        width='24'
-        height='24'
+        width={size}
+        height={size}
         viewBox='0 0 24 24'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
