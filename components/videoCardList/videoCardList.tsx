@@ -22,7 +22,7 @@ const VideoCardList: React.FC<iVideoList> = ({ cards }) => {
       {cards.map((card) => {
         return (
           <div key={card.alt} className={`${styles.width100} mx-2 bg-white`}>
-            <CardVideo card={card} />
+            <CardVideo {...card} />
           </div>
         );
       })}

@@ -4,7 +4,13 @@ import React from 'react';
 import ScoreStarSVG from '../svg/scoreStarSVG';
 import IconPlaySVG from '../svg/iconPlaySVG';
 
-const CardVideo = ({ card: {title} }) => {
+interface iCard {
+  title: string,
+  alt?: string,
+  src?: string
+}
+
+  const CardVideo: React.FC<iCard> = ({ title }) => {
   return (
     <div className='max-w-sm rounded overflow-hidden shadow-lg w-3-5'>
       <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>

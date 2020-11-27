@@ -18,6 +18,8 @@ interface iVideo {
   cards?: Array<iCard>;
 }
 
+const MAX_VIDEOS_TO_SHOW = 3
+
 const Home: React.FC<iVideo> = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [videosToShow, setVideosToShow] = useState([]);
@@ -29,11 +31,12 @@ const Home: React.FC<iVideo> = () => {
     { title: 'Course 4', alt: 'img4', src: '4' },
     { title: 'Course 5', alt: 'img5', src: '5' },
     { title: 'Course 6', alt: 'img6', src: '6' },
+    { title: 'Course 7', alt: 'img7', src: '7' },
+    { title: 'Course 8', alt: 'img8', src: '8' },
   ];
 
   useEffect(() => {
     const videosToShow = [];
-    const MAX_VIDEOS_TO_SHOW = 3
 
     for (let i = currentVideoIndex; i <= currentVideoIndex + MAX_VIDEOS_TO_SHOW; i++) {
       videosToShow.push(cards[i]);
@@ -43,7 +46,7 @@ const Home: React.FC<iVideo> = () => {
   }, [currentVideoIndex]);
 
   const setNextVideoIndex = () => {
-    if (currentVideoIndex < 2) {
+    if (currentVideoIndex < cards.length - MAX_VIDEOS_TO_SHOW - 1) {
       setCurrentVideoIndex(currentVideoIndex + 1);
     }
   };
@@ -64,7 +67,7 @@ const Home: React.FC<iVideo> = () => {
       <main className={styles.main}>
         <h1 className={`${styles.title} pb-1`}>Welcome to Next.js!</h1>
         <h3 className='p-3'>Category with button</h3>
-        <div className='container mx-auto overflow-hidden w-1/2 bg-orange-100'>
+        <div className='container mx-auto bg-orange-100'>
           <VideoCardList cards={videosToShow} />
         </div>
         <div className='flex flex-row'>
