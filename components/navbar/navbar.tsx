@@ -8,9 +8,11 @@ import LogoBook from '../svg/logoBook';
 
 interface iNavbar {
   color: string;
+  value?: string;
+  setValue?: (e: any) => void;
 }
 
-const Navbar: React.FC<iNavbar> = ({ color }) => {
+const Navbar: React.FC<iNavbar> = ({ color, value, setValue }) => {
   return (
     <nav
       className='w-full flex items-center justify-between flex-wrap bg-blue-900 p-6'
@@ -18,7 +20,10 @@ const Navbar: React.FC<iNavbar> = ({ color }) => {
     >
       <Link href='/' passHref>
         <div className='flex items-center flex-shrink-0 text-white mr-6'>
-          <LogoBook color={'white'} /> <h1 className='pl-2' color={color}>Bookmark</h1>
+          <LogoBook color={'white'} />{' '}
+          <h1 className='pl-2' color={color}>
+            Bookmark
+          </h1>
         </div>
       </Link>
       <div className='block lg:hidden'>
@@ -34,7 +39,11 @@ const Navbar: React.FC<iNavbar> = ({ color }) => {
         </button>
       </div>
       <div className='w-full block lg:flex lg:flex-grow lg:items-center lg:w-auto'>
-        <SearchBar placeholder='What do you want to watch today' />
+        <SearchBar
+          placeholder='What do you want to watch today'
+          value={value}
+          setValue={setValue}
+        />
         <div className='flex justify-center items-center'>
           <a
             href='#top'

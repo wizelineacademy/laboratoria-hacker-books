@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 
 // Components
@@ -8,6 +8,22 @@ import Navbar from '../components/navbar/navbar';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
+  const [value, setValue] = useState('');
+
+  // Courses Array Simulated
+  const coursesArr = [
+    { name: 'JavaScript', id: 1 },
+    { name: 'React', id: 2 },
+    { name: 'HTML', id: 3 },
+    { name: 'CSS', id: 4 },
+    { name: 'React N', id: 5 },
+  ];
+
+  // Function Search Filter
+  const coursesFilter = coursesArr.filter((course) => {
+    return course.name.toLowerCase().includes(value.toLowerCase());
+  });
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,11 +31,23 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Navbar color='white'  />
+      <Navbar color='white' value={value} setValue={setValue} />
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to Next.js!</h1>
 
+        <h3 className='text-blue-600'>List Test Search Filter</h3>
+        {coursesFilter.map((course) => {
+          return (
+            <li
+              key={course.id}
+              className='bg-white rounded-lg p-6 mb-4 shadow-md w-full list-none text-center'
+            >
+              {course.name}
+            </li>
+          );
+        })}
+
+        <h1 className={styles.title}>Welcome to Next.js!</h1>
         <p className={styles.description}>
           Get started by editing
           <code className={styles.code}>pages/index.js</code>
