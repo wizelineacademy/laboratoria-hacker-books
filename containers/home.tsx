@@ -15,7 +15,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Navbar color={'white'}/>
+      <Navbar color='white'  />
 
       <main className={styles.main}>
         <h1 className={styles.title}>Welcome to Next.js!</h1>

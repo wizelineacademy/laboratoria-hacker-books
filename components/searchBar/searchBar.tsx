@@ -14,8 +14,15 @@ const searchBar: React.FC<iSearchbar> = ({ placeholder }) => {
     setValue(e.target.value);
   };
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    setValue(value);
+    setValue('');
+  };
+
   return (
-    <div
+    <form
+      onSubmit={handleClick}
       className='text-sm lg:flex-grow flex items-center'
       style={{ marginLeft: '18rem' }}
     >
@@ -30,7 +37,7 @@ const searchBar: React.FC<iSearchbar> = ({ placeholder }) => {
       <button className='bg-white' style={{ padding: '6.5px .5rem' }}>
         <SearchSVG />
       </button>
-    </div>
+    </form>
   );
 };
 
