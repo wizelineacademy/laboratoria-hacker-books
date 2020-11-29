@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+// Components
+import SearchSVG from '../svg/searchSVG';
+
 interface iSearchbar {
   placeholder: string;
 }
@@ -12,7 +15,10 @@ const searchBar: React.FC<iSearchbar> = ({ placeholder }) => {
   };
 
   return (
-    <div className='text-sm lg:flex-grow' style={{ marginLeft: '22rem' }}>
+    <div
+      className='text-sm lg:flex-grow flex items-center'
+      style={{ marginLeft: '18rem' }}
+    >
       <input
         type='text'
         className='px-4 py-2'
@@ -21,6 +27,9 @@ const searchBar: React.FC<iSearchbar> = ({ placeholder }) => {
         value={value}
         onChange={handleChange}
       />
+      <button className='bg-white' style={{ padding: '6.5px .5rem' }}>
+        <SearchSVG />
+      </button>
     </div>
   );
 };
