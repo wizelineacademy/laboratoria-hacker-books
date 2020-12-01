@@ -8,8 +8,8 @@ import LogoBook from '../svg/logoBook';
 
 interface iNavbar {
   color: string;
-  value?: string;
-  setValue?: (e: any) => void;
+  value: string;
+  setValue: (e: string) => void;
 }
 
 const Navbar: React.FC<iNavbar> = ({ color, value, setValue }) => {

@@ -1,21 +1,21 @@
-import { countReset } from 'console';
-import React, { useState } from 'react';
+
+import React, { ChangeEvent, FormEvent } from 'react';
 
 // Components
 import SearchSVG from '../svg/searchSVG';
 
 interface iSearchbar {
   placeholder: string;
-  value?: string;
-  setValue?: (e: any) => void;
+  value: string;
+  setValue: (e: string) => void;
 }
 
 const searchBar: React.FC<iSearchbar> = ({ placeholder, value, setValue }) => {
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLButtonElement>) => {
     setValue(e.target.value);
   };
 
-  const handleClick = (e) => {
+  const handleClick = (e: FormEvent) => {
     e.preventDefault();
     setValue(value);
     setValue('');
@@ -28,6 +28,7 @@ const searchBar: React.FC<iSearchbar> = ({ placeholder, value, setValue }) => {
         style={{ marginLeft: '18rem' }}
       >
         <input
+          autoComplete="on"
           type='text'
           className='px-4 py-2'
           style={{ width: '22rem' }}
