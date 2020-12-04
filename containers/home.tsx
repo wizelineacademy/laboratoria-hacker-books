@@ -1,14 +1,44 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 
 // Components
+import VideoCardList from '../components/videoCardList/videoCardList';
+import ArrowPrevSVG from '../components/svg/arrowPrevSVG';
+import ArrowNextSVG from '../components/svg/arrowNextSVG';
 import Navbar from '../components/navbar/navbar';
 
-// Styles
+// Style
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
+interface iCard {
+  title: string,
+  alt?: string,
+  src?: string
+}
+interface iVideo {
+  cards?: Array<iCard>;
+  setPrevVideoIndex?: () => void;
+  setNextVideoIndex?: () => void;
+}
+
+const MAX_VIDEOS_TO_SHOW = 3
+
+const Home: React.FC<iVideo> = () => {
+  const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0);
+  const [videosToShow, setVideosToShow] = useState<Array<iCard>>([]);
   const [value, setValue] = useState('');
+
+  const cards = [
+    { title: 'Course 1', alt: 'img1', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+    { title: 'Course 2', alt: 'img2', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+    { title: 'Course 3', alt: 'img3', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+    { title: 'Course 4', alt: 'img4', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+    { title: 'Course 5', alt: 'img5', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+    { title: 'Course 6', alt: 'img6', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+    { title: 'Course 7', alt: 'img7', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+    { title: 'Course 8', alt: 'img8', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+  ];
 
   // Courses Array Simulated
   const coursesArr = [
@@ -24,6 +54,28 @@ export default function Home() {
     return course.name.toLowerCase().includes(value.toLowerCase());
   });
 
+  useEffect(() => {
+    const videosToShow = [];
+
+    for (let i = currentVideoIndex; i <= currentVideoIndex + MAX_VIDEOS_TO_SHOW; i++) {
+      videosToShow.push(cards[i]);
+    }
+
+    setVideosToShow(videosToShow);
+  }, [currentVideoIndex]);
+
+  const setNextVideoIndex = () => {
+    if (currentVideoIndex < cards.length - MAX_VIDEOS_TO_SHOW - 1) {
+      setCurrentVideoIndex(currentVideoIndex + 1);
+    }
+  };
+
+  const setPrevVideoIndex = () => {
+    if (currentVideoIndex > 0) {
+      setCurrentVideoIndex(currentVideoIndex - 1);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -34,6 +86,11 @@ export default function Home() {
       <Navbar color='white' value={value} setValue={setValue} />
 
       <main className={styles.main}>
+        <h1 className={styles.title}>Welcome to Next.js!</h1>
+         <h3 className='p-3'>Category with button</h3>
+          <div className='container mx-auto bg-orange-100'>
+            <VideoCardList cards={videosToShow} setPrevVideoIndex={setPrevVideoIndex} setNextVideoIndex={setNextVideoIndex} />
+          </div> 
 
         <h3 className='text-blue-600'>List Test Search Filter</h3>
         {coursesFilter.map((course) => {
@@ -47,7 +104,6 @@ export default function Home() {
           );
         })}
 
-        <h1 className={styles.title}>Welcome to Next.js!</h1>
         <p className={styles.description}>
           Get started by editing
           <code className={styles.code}>pages/index.js</code>
@@ -96,4 +152,6 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+};
+
+export default Home;

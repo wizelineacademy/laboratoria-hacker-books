@@ -1,5 +1,7 @@
 .container {
   min-height: 100vh;
+  justify-content: center; 
+  align-items: center;
   width: 100%;
 }
 
@@ -96,6 +98,21 @@
   border-color: #0070f3;
 }
 
+.containerCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.overflowList {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.width100 {
+  width: 100%;
+}
+
 .card h3 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
@@ -109,6 +126,10 @@
 
 .logo {
   height: 1em;
+}
+
+.w-img {
+  width: 235px;
 }
 
 @media (max-width: 600px) {
