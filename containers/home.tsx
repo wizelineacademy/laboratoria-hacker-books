@@ -27,14 +27,14 @@ const Home: React.FC<iVideo> = () => {
   const [videosToShow, setVideosToShow] = useState<Array<iCard>>([]);
 
   const cards = [
-    { title: 'Course 1', alt: 'img1', src: '1' },
-    { title: 'Course 2', alt: 'img2', src: '2' },
-    { title: 'Course 3', alt: 'img3', src: '3' },
-    { title: 'Course 4', alt: 'img4', src: '4' },
-    { title: 'Course 5', alt: 'img5', src: '5' },
-    { title: 'Course 6', alt: 'img6', src: '6' },
-    { title: 'Course 7', alt: 'img7', src: '7' },
-    { title: 'Course 8', alt: 'img8', src: '8' },
+    { title: 'Course 1', alt: 'img1', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+    { title: 'Course 2', alt: 'img2', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+    { title: 'Course 3', alt: 'img3', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+    { title: 'Course 4', alt: 'img4', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+    { title: 'Course 5', alt: 'img5', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+    { title: 'Course 6', alt: 'img6', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+    { title: 'Course 7', alt: 'img7', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
+    { title: 'Course 8', alt: 'img8', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
   ];
 
   useEffect(() => {
