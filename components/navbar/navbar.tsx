@@ -20,7 +20,7 @@ const Navbar: React.FC<iNavbar> = ({ color, value, setValue }) => {
     >
       <Link href='/' passHref>
         <div className='flex items-center flex-shrink-0 text-white mr-6'>
-          <LogoBook color={'white'} />{' '}
+          <LogoBook color={'white'} />
           <h1 className='pl-2' color={color}>
             Bookmark
           </h1>
