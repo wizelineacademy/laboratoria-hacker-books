@@ -128,10 +128,6 @@
   height: 1em;
 }
 
-.w-img {
-  width: 100%;
-}
-
 @media (max-width: 600px) {
   .grid {
     width: 100%;
