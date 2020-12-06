@@ -1,7 +1,10 @@
 import Layout from './layout';
 import Home from '../../containers/home';
 
-export default { title: 'Layout' };
+export default { 
+  component: Layout,
+  subcomponents: { Home },
+  title: 'Layout', };
 
 export const simple = () => {
   return (
