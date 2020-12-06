@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 // Styles
 import styles from '../styles/Home.module.css';
-import TestNextIntro from '../components/testNextIntro/testNextIntro';
+import TestHome from '../components/testHome/testHome';
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <h1 className={styles.title}>Welcome to Next.js!</h1>
 
-      <TestNextIntro />
+      <TestHome />
     </div>
   );
 }
