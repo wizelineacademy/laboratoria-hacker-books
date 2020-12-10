@@ -1,4 +1,4 @@
-import Card from '../../card/card';
+import Card from '../../card';
 import Image from '../../image';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 const Preview: React.FC<Props> = ({ url }) => {
     // TODO: implementar logica para obtener imagen y descripcion desde la url
     return (
-        <Card>
+        <Card color="white" withShadow={false}>
             <Image src={url} alt="video preview"/>
             <div>
                 <p>
