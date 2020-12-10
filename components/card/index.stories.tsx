@@ -1,4 +1,4 @@
-import Card from './card';
+import Card from './index';
 
 export default { title: 'Card' };
 
