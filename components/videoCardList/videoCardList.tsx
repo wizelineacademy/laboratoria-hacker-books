@@ -26,7 +26,7 @@ const VideoCardList: React.FC<iVideoList> = ({ cards, setPrevVideoIndex, setNext
       <ArrowPrevSVG onPrev={setPrevVideoIndex} />
       {cards.map((card) => {
         return (
-          <div key={card.alt} className={`${styles.wImg} mx-2 bg-white`}>
+          <div key={card.alt} className='w-full mx-2 bg-white'>
             <CardVideo {...card} />
           </div>
         );

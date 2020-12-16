@@ -33,7 +33,7 @@ type Props = iCard | iPlaySVG | iScoreSVG;
     <div className='max-w-sm rounded overflow-hidden shadow-lg'>
       <div  className="flex justify-center">
         <img src={src} alt="course" style={{height: '188px'}}/>
-         <div  className={`${styles.mtPlay} absolute`}>
+         <div  className='place-self-center absolute'>
         <IconPlaySVG size={size} />
          </div>
       </div>
