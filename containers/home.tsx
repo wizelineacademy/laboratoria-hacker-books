@@ -27,6 +27,7 @@ const MAX_VIDEOS_TO_SHOW = 3
 const Home: React.FC<iVideo> = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0);
   const [videosToShow, setVideosToShow] = useState<Array<iCard>>([]);
+  const [value, setValue] = useState('');
 
   const cards = [
     { title: 'Course 1', alt: 'img1', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
@@ -38,6 +39,20 @@ const Home: React.FC<iVideo> = () => {
     { title: 'Course 7', alt: 'img7', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
     { title: 'Course 8', alt: 'img8', src: 'https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/webentwicklung-t.jpg' },
   ];
+
+  // Courses Array Simulated
+  const coursesArr = [
+    { name: 'JavaScript', id: 1 },
+    { name: 'React', id: 2 },
+    { name: 'HTML', id: 3 },
+    { name: 'CSS', id: 4 },
+    { name: 'React N', id: 5 },
+  ];
+
+  // Function Search Filter
+  const coursesFilter = coursesArr.filter((course) => {
+    return course.name.toLowerCase().includes(value.toLowerCase());
+  });
 
   useEffect(() => {
     const videosToShow = [];
@@ -68,7 +83,7 @@ const Home: React.FC<iVideo> = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Navbar color={'white'}/>
+      <Navbar color='white' value={value} setValue={setValue} />
 
       <main className={styles.main}>
         <h1 className={styles.title}>Welcome to Next.js!</h1>
@@ -76,6 +91,18 @@ const Home: React.FC<iVideo> = () => {
           <div className='container mx-auto bg-orange-100'>
             <VideoCardList cards={videosToShow} setPrevVideoIndex={setPrevVideoIndex} setNextVideoIndex={setNextVideoIndex} />
           </div> 
+
+        <h3 className='text-blue-600'>List Test Search Filter</h3>
+        {coursesFilter.map((course) => {
+          return (
+            <li
+              key={course.id}
+              className='bg-white rounded-lg p-6 mb-4 shadow-md w-full list-none text-center'
+            >
+              {course.name}
+            </li>
+          );
+        })}
 
         <p className={styles.description}>
           Get started by editing
