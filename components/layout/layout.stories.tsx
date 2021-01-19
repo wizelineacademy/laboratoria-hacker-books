@@ -3,7 +3,7 @@ import Home from '../../containers/home';
 
 export default { 
   component: Layout,
-  subcomponents: { Home },
+  subcomponents: Home,
   title: 'Layout', };
 
 export const simple = () => {
