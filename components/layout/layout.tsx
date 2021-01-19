@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar color='white' />
-      <Sidebar />
+      <Sidebar props />
       <Main>{children}</Main>
       <Footer />
     </>
