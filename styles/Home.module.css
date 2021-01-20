@@ -1,4 +1,11 @@
 
+.container {
+  min-height: 100vh;
+  justify-content: center; 
+  align-items: center;
+  width: 100%;
+}
+
 .main {
   padding: 5rem 0;
   flex: 1;
@@ -90,6 +97,21 @@
 .card:active {
   color: #0070f3;
   border-color: #0070f3;
+}
+
+.containerCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.overflowList {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.width100 {
+  width: 100%;
 }
 
 .card h3 {
