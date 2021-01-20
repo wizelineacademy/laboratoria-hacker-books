@@ -9,7 +9,6 @@ import Sidebar from '../sidebar/sidebar';
 const Layout = ({ children }) => {
   return (
     <>
-      <Navbar color='white' />
       <Sidebar />
       <Main>{children}</Main>
       <Footer />
