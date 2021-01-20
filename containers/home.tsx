@@ -11,9 +11,9 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className={styles.title}>Welcome to Next.js!</h1>
 
       <div className={styles.main}>
+        <h1 className={styles.title}>Welcome to Next.js!</h1>
         <p className={styles.description}>
           Get started by editing
           <code className={styles.code}>pages/index.js</code>
