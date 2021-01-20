@@ -12,16 +12,17 @@
     "e2e": "cypress open"
   },
   "dependencies": {
+    "@actions/core": "^1.2.6",
     "cypress": "^5.0.0",
     "http-status-codes": "^2.1.2",
-    "next": "9.5.2",
+    "next": "^10.0.5",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@commitlint/cli": "^9.1.2",
-    "@commitlint/config-conventional": "^9.1.2",
+    "@commitlint/config-conventional": "^12.0.0",
     "@cypress/code-coverage": "^3.8.1",
     "@hapi/joi": "^17.1.1",
     "@storybook/react": "^6.0.12",
